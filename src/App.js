@@ -1,6 +1,8 @@
-import { Map } from "./components/Map";
+import { Map } from "./components/Map/Map.js";
+import { Permission } from "./components/Permission/Permission.js";
 import "./App.css";
 import { useJsApiLoader } from "@react-google-maps/api";
+
 
 const defaultCenter = {
   lat: 43.6532,
@@ -17,8 +19,10 @@ const App = () => {
   });
   return (
     <div className="App">
-      {isLoaded ? <Map center={defaultCenter} /> : <h2>Loading</h2>}
+      {isLoaded ? <Map center={defaultCenter} /> : <h2>Loading</h2>},
+      <Permission />
     </div>
+   
   );
 };
 
